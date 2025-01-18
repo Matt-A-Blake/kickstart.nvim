@@ -158,10 +158,33 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 --  Indentation Settings
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+local TAB_WIDTH = 4
+vim.o.tabstop = TAB_WIDTH
+vim.o.shiftwidth = TAB_WIDTH
+vim.o.softtabstop = TAB_WIDTH
 vim.o.expandtab = true
 vim.o.smartindent = true
+
+--[[
+vim.bo.tabstop = TAB_WIDTH
+vim.bo.shiftwidth = TAB_WIDTH
+vim.bo.expandtab = false
+
+vim.opt.tabstop = TAB_WIDTH
+vim.opt.shiftwidth = TAB_WIDTH
+vim.opt.softtabstop = TAB_WIDTH
+vim.opt.expandtab = false
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'c', 'cpp' },
+  callback = function()
+    vim.bo.tabstop = TAB_WIDTH
+    vim.bo.shiftwidth = TAB_WIDTH
+    vim.bo.expandtab = false
+  end,
+})
+
+]]
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -620,10 +643,11 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
         -- pyright = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {},
+        zls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -936,7 +960,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
