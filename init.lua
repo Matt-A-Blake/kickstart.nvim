@@ -995,5 +995,7 @@ require('lazy').setup({
   },
 })
 
+vim.o.guifont = 'RobotoMono Nerd Font Mono Lt:h14'
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
