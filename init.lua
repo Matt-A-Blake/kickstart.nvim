@@ -875,6 +875,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'orgmode' },
         },
       }
     end,
@@ -979,6 +980,31 @@ require('lazy').setup({
   -- require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+
+  -- Nvim Orgmode plugin
+  {
+    'nvim-orgmode/orgmode',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-orgmode/telescope-orgmode.nvim',
+      'nvim-orgmode/org-bullets.nvim',
+    },
+    event = 'VeryLazy',
+    config = function()
+      -- Setup orgmode
+      require('orgmode').setup {
+        org_agenda_files = '~/orgfiles/**/*',
+        org_default_notes_file = '~/orgfiles/refile.org',
+      }
+      -- Setup org-bullets
+      require('org-bullets').setup()
+      require('telescope').setup()
+      require('telescope').load_extension 'orgmode'
+      vim.keymap.set('n', '<leader>r', require('telescope').extensions.orgmode.refile_heading)
+      vim.keymap.set('n', '<leader>fh', require('telescope').extensions.orgmode.search_headings)
+      vim.keymap.set('n', '<leader>li', require('telescope').extensions.orgmode.insert_link)
+    end,
+  },
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
