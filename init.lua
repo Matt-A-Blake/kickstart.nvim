@@ -1005,6 +1005,11 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>li', require('telescope').extensions.orgmode.insert_link)
     end,
   },
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
