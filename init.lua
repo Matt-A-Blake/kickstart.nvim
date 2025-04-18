@@ -259,6 +259,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'jose-elias-alvarez/null-ls.nvim', -- For formatting and linting
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -646,6 +647,22 @@ require('lazy').setup({
         clangd = {},
         -- gopls = {},
         -- pyright = {},
+        pylsp = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                maxLineLength = 100,
+              },
+              black = {
+                enabled = true,
+              },
+              isort = {
+                enabled = true,
+                profile = 'black',
+              },
+            },
+          },
+        },
         rust_analyzer = {},
         zls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -999,3 +1016,20 @@ vim.o.guifont = 'RobotoMono Nerd Font Mono Lt:h14'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- vim.filetype.add {
+-- extension = { '.containerfile' },
+-- alias = 'dockerfile',
+-- }
+
+vim.filetype.add {
+  extension = {
+    containerfile = 'dockerfile',
+    Containerfile = 'dockerfile',
+  },
+}
+
+local vim = vim
+local opt = vim.opt
+opt.foldmethod = 'expr'
+opt.foldexpr = 'nvim_tresitter#foldexpr()'
