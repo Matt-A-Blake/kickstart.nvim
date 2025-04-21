@@ -1008,6 +1008,7 @@ require('lazy').setup({
 -- Config values
 require 'config.tabs'
 require 'config.gui'
+require 'config.containers'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
