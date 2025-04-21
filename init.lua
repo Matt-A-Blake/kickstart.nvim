@@ -666,7 +666,23 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         gopls = {},
-        pyright = {},
+        -- pyright = {},
+        pylsp = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                maxLineLength = 100,
+              },
+              black = {
+                enabled = true,
+              },
+              isort = {
+                enabled = true,
+                profile = 'black',
+              },
+            },
+          },
+        },
         rust_analyzer = {},
         zls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
