@@ -1031,7 +1031,7 @@ require('lazy').setup({
 require 'config.tabs'
 require 'config.gui'
 require 'config.containers'
--- require 'config.fold'
+require 'config.fold'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
