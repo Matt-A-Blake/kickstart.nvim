@@ -992,6 +992,8 @@ require('lazy').setup({
 
   require 'plugins.orgmode',
   require 'plugins.harpoon',
+  require 'plugins.coc',
+  require 'plugins.ufo',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
@@ -1029,7 +1031,7 @@ require('lazy').setup({
 require 'config.tabs'
 require 'config.gui'
 require 'config.containers'
-require 'config.fold'
+-- require 'config.fold'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
