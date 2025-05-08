@@ -992,7 +992,7 @@ require('lazy').setup({
 
   require 'plugins.orgmode',
   require 'plugins.harpoon',
-  require 'plugins.coc',
+  -- require 'plugins.coc',
   require 'plugins.ufo',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
