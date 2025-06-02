@@ -675,7 +675,11 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        clangd = {
+          cmd = { 'clangd', '--query-driver=/usr/bin/g++' },
+          -- cmd = { 'clangd', '--query-driver=/usr/bin/g++', '--log=verbose' },
+          filetypes = { 'c', 'cpp', 'cxx', 'h', 'hpp', 'hxx' },
+        },
         -- gopls = {},
         -- pyright = {},
         pylsp = {
@@ -977,7 +981,6 @@ require('lazy').setup({
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
-    { 'RaafatTurki/hex.nvim' },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --
@@ -999,13 +1002,15 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
+  -- require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   require 'plugins.orgmode',
   require 'plugins.harpoon',
   -- require 'plugins.coc',
   require 'plugins.ufo',
+  require 'plugins.hex',
+  require 'plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
@@ -1022,17 +1027,17 @@ require('lazy').setup({
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
+      cmd = '󰘳',
+      config = '',
       event = '📅',
       ft = '📂',
-      init = '⚙',
-      keys = '🗝',
+      init = '',
+      keys = '󰌆',
       plugin = '🔌',
       runtime = '💻',
       require = '🌙',
       source = '📄',
-      start = '🚀',
+      start = '',
       task = '📌',
       lazy = '💤 ',
     },
