@@ -1,4 +1,4 @@
--- Config for working iwht containers (podman, docker, etc.)
+-- Config for working with containers (podman, docker, etc.)
 
 vim.filetype.add {
   extension = {

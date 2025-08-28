@@ -250,8 +250,10 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  --'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'jose-elias-alvarez/null-ls.nvim', -- For formatting and linting
+  'kalafut/vim-taskjuggler',
+  'mfussenegger/nvim-dap',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -682,22 +684,22 @@ require('lazy').setup({
         },
         -- gopls = {},
         -- pyright = {},
-        pylsp = {
-          pylsp = {
-            plugins = {
-              pycodestyle = {
-                maxLineLength = 100,
-              },
-              black = {
-                enabled = true,
-              },
-              isort = {
-                enabled = true,
-                profile = 'black',
-              },
-            },
-          },
-        },
+        -- pylsp = {
+        --   pylsp = {
+        --     plugins = {
+        --       pycodestyle = {
+        --         maxLineLength = 100,
+        --       },
+        --       black = {
+        --         enabled = true,
+        --       },
+        --       isort = {
+        --         enabled = true,
+        --         profile = 'black',
+        --       },
+        --     },
+        --   },
+        -- },
         rust_analyzer = {},
         zls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -1009,7 +1011,7 @@ require('lazy').setup({
   require 'plugins.harpoon',
   -- require 'plugins.coc',
   require 'plugins.ufo',
-  require 'plugins.hex',
+  --require 'plugins.hex',
   require 'plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -1048,6 +1050,7 @@ require('lazy').setup({
 require 'config.tabs'
 require 'config.gui'
 require 'config.containers'
+require 'config.trio-basic'
 require 'config.fold'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
