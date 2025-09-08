@@ -254,6 +254,7 @@ require('lazy').setup({
   'jose-elias-alvarez/null-ls.nvim', -- For formatting and linting
   'kalafut/vim-taskjuggler',
   'mfussenegger/nvim-dap',
+  'tpope/vim-fugitive',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
