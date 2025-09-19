@@ -257,7 +257,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   --'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'jose-elias-alvarez/null-ls.nvim', -- For formatting and linting
+  -- 'jose-elias-alvarez/null-ls.nvim', -- For formatting and linting (deprecated, using conform.nvim instead)
   'kalafut/vim-taskjuggler',
   'mfussenegger/nvim-dap',
   'tpope/vim-fugitive',
@@ -988,7 +988,7 @@ require('lazy').setup({
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { 'ruby' },
       },
-      indent = { enable = true, disable = { 'ruby' } },
+      indent = { enable = true, disable = { 'ruby', 'c', 'cpp', 'cxx', 'h', 'hpp', 'hxx' } },
     },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
