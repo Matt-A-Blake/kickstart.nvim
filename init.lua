@@ -137,6 +137,12 @@ vim.opt.updatetime = 250
 -- Decrease mapped sequence wait time
 vim.opt.timeoutlen = 300
 
+-- Configure LSP logging to prevent large log files
+vim.lsp.set_log_level("WARN")
+vim.lsp.set_log_level = function(level)
+  vim.lsp.log.set_level(level)
+end
+
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
