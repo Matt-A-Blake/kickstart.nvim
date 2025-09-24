@@ -1,0 +1,18 @@
+*cheat.txt*               Cheatsheet
+
+A cheatsheet with commands unique to this setup and commands I am still learning
+
+Cheetsheet                                                     *CHEAT* *cheat* ~
+
+<leader>sk              Search Keybindings
+
+================================================================================
+UPDATING                                                      *cheat-updating*
+
+`:help help-writing`    Get help for writing this document.
+`:helptags ALL`         Rebuild all help
+`:helptags .`           Rebuild in current directory.
+
+Help examples can be found at `/usr/share/nvim/runtime/doc`.
+
+ vim:tw=78:ts=8:ft=help:norl:
