@@ -57,7 +57,45 @@ return {
         end
         table.insert(newVirtText, {suffix, 'MoreMsg'})
         return newVirtText
-      end
+      end,
+      -- Completely disable preview to prevent closing brace from showing
+      preview = {
+        win_config = {
+          border = { '', '─', '', '', '', '─', '', '' },
+          winhighlight = 'Normal:Folded',
+          winblend = 0
+        },
+        mappings = {
+          scrollU = '<C-u>',
+          scrollD = '<C-d>',
+          jumpTop = '[',
+          jumpBot = ']'
+        }
+      },
+      -- Use treesitter provider instead of LSP for better fold control
+      provider_selector = function(bufnr, filetype, buftype)
+        return {'treesitter', 'indent'}
+      end,
+      -- Disable hover preview to prevent multi-line display
+      open_fold_hl_timeout = 0,
+      -- Ensure proper fold behavior
+      fold_virt_text_priority = 100,
+      -- Disable fold preview on hover
+      enable_get_fold_virt_text = true,
+      -- Use the new deprecated option name
+      close_fold_kinds_for_ft = {
+        ['*'] = {'imports', 'comment'}
+      },
+      -- Disable fold preview window completely
+      enable_fold_virt_text = true,
+      -- Set fold level to ensure proper folding
+      fold_level = 99,
+      -- Disable preview completely
+      enable_preview = false,
+      -- Disable fold preview on hover completely
+      enable_fold_preview = false,
+      -- Disable fold preview on hover completely
+      enable_fold_preview_on_hover = false
     })
     --
 
