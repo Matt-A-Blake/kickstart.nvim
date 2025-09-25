@@ -261,6 +261,7 @@ require('lazy').setup({
   'kalafut/vim-taskjuggler',
   'mfussenegger/nvim-dap',
   'tpope/vim-fugitive',
+  'ojroques/nvim-bufdel',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -1060,5 +1061,6 @@ require 'config.containers'
 require 'config.trio-basic'
 require 'config.fold'
 
+vim.keymap.set('n', '<leader>d', ':BufDel<CR>', { desc = '[D]electe (close} current buffer.' })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
