@@ -8,6 +8,12 @@ vim.o.smartindent = true
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'c', 'cpp', 'cxx', 'h', 'hpp', 'hxx' },
   callback = function()
+    -- Set tab settings first to ensure they take precedence
+    vim.bo.tabstop = TAB_WIDTH
+    vim.bo.shiftwidth = TAB_WIDTH
+    vim.bo.expandtab = true
+    vim.bo.smartindent = true
+    
     -- Enable C-style indentation for C/C++
     vim.bo.cindent = true
     -- Configure cinoptions for proper brace placement
@@ -34,9 +40,13 @@ vim.api.nvim_create_autocmd('FileType', {
     -- *0 = search for unclosed comments at the start of lines
     -- /0 = don't indent case labels
     vim.bo.cinoptions = 'w0,W0,b0,p0,g0,h0,l0,N-s,i0,+0,c0,:0,t0,(0,u0,m0,j1,J1,)0,*0,/0'
-    vim.bo.tabstop = TAB_WIDTH
-    vim.bo.shiftwidth = TAB_WIDTH
-    vim.wo.expandtab = true
-    vim.bo.smartindent = true
+    
+    -- Force expandtab to be true after setting cindent
+    vim.bo.expandtab = true
+    
+    -- Use a timer to ensure expandtab is set after any other plugins
+    vim.defer_fn(function()
+      vim.bo.expandtab = true
+    end, 10)
   end,
 })
