@@ -1,7 +1,6 @@
 local TAB_WIDTH = 4
 vim.o.tabstop = TAB_WIDTH
 vim.o.shiftwidth = TAB_WIDTH
-vim.o.shiftwidth = TAB_WIDTH
 vim.o.expandtab = true
 vim.o.smartindent = true
 
@@ -35,10 +34,9 @@ vim.api.nvim_create_autocmd('FileType', {
     -- *0 = search for unclosed comments at the start of lines
     -- /0 = don't indent case labels
     vim.bo.cinoptions = 'w0,W0,b0,p0,g0,h0,l0,N-s,i0,+0,c0,:0,t0,(0,u0,m0,j1,J1,)0,*0,/0'
-    vim.bo.tabstop = TAB_WIDTH
-    vim.bo.shiftwidth = TAB_WIDTH
-    vim.bo.shiftwidth = TAB_WIDTH
-    vim.bo.expandtab = true
-    vim.bo.smartindent = true
+    vim.wo.tabstop = TAB_WIDTH
+    vim.wo.shiftwidth = TAB_WIDTH
+    vim.wo.expandtab = true
+    vim.wo.smartindent = true
   end,
 })
