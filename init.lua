@@ -167,6 +167,10 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- Eanble project level .nvim.lua config files. Secure is to prevent insecure local settings from loading.
+vim.o.exrc = true
+vim.secure = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -1068,7 +1072,6 @@ require('lazy').setup({
       vim.api.nvim_set_keymap('n', '<leader>tmp', ':-tabmove<CR>', { noremap = true })
       -- move current tab to next position
       vim.api.nvim_set_keymap('n', '<leader>tmn', ':+tabmove<CR>', { noremap = true })
-      vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
     end,
   },
 
