@@ -1132,6 +1132,7 @@ require 'config.tabs'
 require 'config.gui'
 require 'config.containers'
 require 'config.trio-basic'
+require 'config.verilog'
 require 'config.fold'
 
 vim.keymap.set('n', '<leader>d', ':BufDel<CR>', { desc = '[D]electe (close} current buffer.' })
