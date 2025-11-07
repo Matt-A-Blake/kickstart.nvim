@@ -266,6 +266,7 @@ require('lazy').setup({
   'mfussenegger/nvim-dap',
   'tpope/vim-fugitive',
   'ojroques/nvim-bufdel',
+  'fei6409/log-highlight.nvim',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
