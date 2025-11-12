@@ -691,9 +691,20 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {
-          cmd = { 'clangd', '--query-driver=/usr/bin/g++' },
+          cmd = {
+            'clangd',
+            '--background-index',
+            '--query-driver=*',
+            '--header-insertion=iwyu',
+            '--completion-style=detailed',
+            '--function-arg-placeholders=false',
+            '--clang-tidy',
+          },
           -- cmd = { 'clangd', '--query-driver=/usr/bin/g++', '--log=verbose' },
           filetypes = { 'c', 'cpp', 'cxx', 'h', 'hpp', 'hxx' },
+          root_dir = function(fname)
+            return require('lspconfig.util').root_pattern('compile_commands.json', '.clangd', '.git')(fname) or vim.fn.getcwd()
+          end,
         },
         -- gopls = {},
         -- pyright = {},
