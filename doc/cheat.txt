@@ -4,6 +4,9 @@ A cheatsheet with commands unique to this setup and commands I am still learning
 
 Cheetsheet                                                     *CHEAT* *cheat* ~
 
+gt              Next tab
+gT              Previous tab
+{count}gt       Got to tab page {count}
 <leader>ca      Apply quickfix.
 <leader>d       Close current file.
 g<              View last shell command output.
