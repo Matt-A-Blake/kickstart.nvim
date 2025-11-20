@@ -1146,6 +1146,7 @@ require('lazy').setup({
 require 'config.tabs'
 require 'config.gui'
 require 'config.containers'
+require 'config.log-filetype'
 require 'config.trio-basic'
 require 'config.verilog'
 require 'config.fold'
