@@ -7,17 +7,41 @@ Cheetsheet                                                     *CHEAT* *cheat* ~
 gt              Next tab
 gT              Previous tab
 {count}gt       Got to tab page {count}
-<leader>ca      Apply quickfix.
-<leader>d       Close current file.
-g<              View last shell command output.
-<leader>sk      Search Keybindings.
+<leader>ca      Apply quickfix
+<leader>d       Close current file
+g<              View last shell command output
+<leader>sk      Search Keybindings
+CTRL-ws         Split window horizontally
+CTRL-wv         Split window vertically
 
 ================================================================================
-UPDATING                                                      *cheat-updating*
+BUFFERS                                                 *cheat-buffers*
 
-`:help help-writing`    Get help for writing this document.
-`:helptags ALL`         Rebuild all help.
-`:helptags .`           Rebuild in current directory.
+|"|{c}yy          Yank current line to buffer {c}
+|"|{c}{count}y    Yank {count} lines to buffer {c}
+
+|"|{c}p           Paste buffer {c} after cursor
+|"|{c}P           Paste buffer {c} before cursor
+
+================================================================================
+MARKS                                                   *cheat-marks*
+
+|m|{c}            Mark curren position as {c}
+|`|{c}            Move cursor to {c}
+|'|{c}            Move to the beginning of the line containing mark {c}
+|``|              Return to previous context
+
+`:marks`          List marks
+
+================================================================================
+UPDATING                                                *cheat-updating*
+
+`:help help-writing`    Get help for writing this document
+`:helptags ALL`         Rebuild all help
+`:helptags .`           Rebuild in current directory
+
+After running `:helptags .` run `:setlocal modifiable` to allow editing the
+file again.
 
 Help examples can be found at `/usr/share/nvim/runtime/doc`.
 
