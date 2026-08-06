@@ -14,6 +14,13 @@ g<              View last shell command output
 CTRL-ws         Split window horizontally
 CTRL-wv         Split window vertically
 
+Set tabs to 4
+`:set tabstop=4`
+`:set shiftwidth=4`
+
+Reload a file
+`:e`
+
 ================================================================================
 BUFFERS                                                 *cheat-buffers*
 
@@ -32,6 +39,22 @@ MARKS                                                   *cheat-marks*
 |``|              Return to previous context
 
 `:marks`          List marks
+
+================================================================================
+CLAUDE CODE                                             *cheat-claudecode*
+
+<leader>ac        Toggle Claude terminal
+<leader>af        Focus Claude window
+<leader>ar        Resume Claude session
+<leader>aC        Continue Claude session
+<leader>am        Select model
+<leader>ab        Add current buffer to context
+<leader>as        Send visual selection (visual mode)
+<leader>aa        Accept proposed diff
+<leader>ad        Reject proposed diff
+
+CTRL-o            Read Claude history
+CTRL-\ CTRL-n     Change modes to allow neovim commands
 
 ================================================================================
 UPDATING                                                *cheat-updating*

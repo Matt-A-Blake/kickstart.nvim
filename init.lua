@@ -1169,6 +1169,7 @@ require('lazy').setup({
   require 'plugins.ufo',
   --require 'plugins.hex',
   require 'plugins.neo-tree',
+  require 'plugins.claudecode',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

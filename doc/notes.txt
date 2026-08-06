@@ -1,0 +1,11 @@
+Notes
+=====
+
+claudecode.nvim / coc.lua keymap overlap
+-----------------------------------------
+lua/plugins/coc.lua defines <leader>a, <leader>ac, and <leader>as, which
+overlap with the <leader>a keymap group added for claudecode.nvim
+(lua/plugins/claudecode.lua). coc.lua is currently disabled (its
+`require 'plugins.coc'` line is commented out in init.lua), so there is no
+active conflict today. If coc.lua is ever re-enabled, these keymaps will
+need to be reconciled.
